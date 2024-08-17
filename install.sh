@@ -8,7 +8,7 @@ if [ "$1" == "--init" ]; then
 		echo "${i} copied to $PWD."
 	done
 else
-	read -p "Are you sure to install my dotfiles? It can delete your configs, so take a backup. [y/N]" answer
+	read -p "Are you sure to install my dotfiles? It can delete your configs, so take a backup. [y/N] " answer
 	if [ "$answer" == "y" ]; then
 	for i in $DOTDIRS; do
 		cp -rf ./${i} ~/.config/
