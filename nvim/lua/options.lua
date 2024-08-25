@@ -13,3 +13,5 @@ vim.opt.splitright = true           -- open new horizontal splits right
 vim.opt.showmode = false            -- we are experienced, wo don't need the "-- INSERT --" mode hint
 vim.opt.termguicolors = true -- true color nvim
 vim.cmd "colorscheme monokai_pro"
+-- Leader key
+vim.g.mapleader = " "

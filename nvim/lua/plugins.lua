@@ -18,6 +18,14 @@ require("lazy").setup({
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
 
+  -- Vscode-like file browser
+  {
+	  "nvim-tree/nvim-tree.lua",
+	  config = function()
+		  require("nvim-tree").setup()
+	end,
+  },
+
   -- Vscode-like pictograms
   {
     "onsails/lspkind.nvim",
