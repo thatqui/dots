@@ -1,5 +1,6 @@
-# nvim
-qui's nvim config.
+# qui's nvim config
+
+To use this config, please run [install.sh](../install.sh) script.
 
 ## Notes
 

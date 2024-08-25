@@ -1,5 +1,5 @@
-- [Dots](#Dots)
-    - [Installation](#Installation)
+- [Dots](#dots)
+    - [Installation](#installation)
 
 # Dots
 
