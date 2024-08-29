@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DOTDIRS="nvim hypr rofi waybar"
-APPLIST="nvim Hyprland hyprpaper gnome-keyring rofi waybar konsole thunar flameshot rofi"
+APPLIST="nvim Hyprland hyprpaper gnome-keyring rofi waybar konsole thunar hyprshot rofi"
 
 if [ "$1" == "--init" ]; then
 	for i in $DOTDIRS; do
