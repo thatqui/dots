@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DOTDIRS="nvim hypr rofi waybar alacritty"
-APPLIST="neovim hyprland hyprpaper gnome-keyring waybar alacritty thunar hyprshot rofi-wayland polkit-kde-agent swaylock-effects"
+APPLIST="neovim hyprland hyprpaper gnome-keyring waybar alacritty thunar hyprshot rofi-wayland polkit-kde-agent swaylock-effects zsh"
 
 if [ "$1" == "--init" ]; then
     for i in $DOTDIRS; do
@@ -15,7 +15,8 @@ else
         if [ "$1" != "--nocheck" ]; then
             source /etc/os-release
             if [ "$ID" == "arch" ]; then
-                paru -S $APPLIST --noconfirm --needed
+                echo "INFO: Installing Packages"
+		paru -S $APPLIST --noconfirm --needed
             else
                 echo "This script only supports Arch Linux. If you aren't using Arch, you should install dependencies yourself and run this script with --nocheck parameter."
                 exit 1
