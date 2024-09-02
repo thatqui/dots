@@ -16,7 +16,12 @@ else
             source /etc/os-release
             if [ "$ID" == "arch" ]; then
                 echo "INFO: Installing Packages"
-		paru -S $APPLIST --noconfirm --needed
+                paru -S $APPLIST --noconfirm --needed
+            elif [ "$ID" == "fedora" ]; then
+                sudo dnf install --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' --setopt='terra.gpgkey=https://repos.fyralabs.com/terra$releasever/key.asc' terra-release
+                sudo dnf copr enable solopasha/hyprland -y
+                sudo dnf copr enable eddsalkield/swaylock-effects -y
+                sudo dnf install hyprland hyprpaper waybar hyprshot swaylock-effects neovim gnome-keyring alacritty thunar rofi-wayland polkit-kde zsh zed -y
             else
                 echo "This script only supports Arch Linux. If you aren't using Arch, you should install dependencies yourself and run this script with --nocheck parameter."
                 exit 1
