@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 DOTDIRS="nvim hypr rofi waybar alacritty zed"
-APPLIST="neovim hyprland hyprpaper gnome-keyring waybar alacritty thunar hyprshot rofi-wayland polkit-kde-agent swaylock-effects zsh zed"
+ARCH_APPLIST="neovim hyprland hyprpaper gnome-keyring waybar alacritty thunar hyprshot rofi-wayland polkit-kde-agent swaylock-effects zsh zed nwg-look-bin"
+FEDORA_APPLIST="hyprland hyprpaper waybar hyprshot swaylock-effects neovim gnome-keyring alacritty thunar rofi-wayland polkit-kde zsh zed nwg-look"
 
 if [ "$1" == "--init" ]; then
     for i in $DOTDIRS; do
@@ -18,10 +19,11 @@ else
                 echo "INFO: Installing Packages"
                 paru -S $APPLIST --noconfirm --needed
             elif [ "$ID" == "fedora" ]; then
-                sudo dnf install --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' --setopt='terra.gpgkey=https://repos.fyralabs.com/terra$releasever/key.asc' terra-release
+                sudo dnf install --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' --setopt='terra.gpgkey=https://repos.fyralabs.com/terra$releasever/key.asc' terra-release -y
                 sudo dnf copr enable solopasha/hyprland -y
                 sudo dnf copr enable eddsalkield/swaylock-effects -y
-                sudo dnf install hyprland hyprpaper waybar hyprshot swaylock-effects neovim gnome-keyring alacritty thunar rofi-wayland polkit-kde zsh zed -y
+		sudo dnf copr enable tofik/nwg-shell -y
+                sudo dnf install $FEDORA_APPLIST -y
             else
                 echo "This script only supports Arch Linux. If you aren't using Arch, you should install dependencies yourself and run this script with --nocheck parameter."
                 exit 1
