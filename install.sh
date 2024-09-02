@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 DOTDIRS="nvim hypr rofi waybar alacritty zed"
-ARCH_APPLIST="neovim hyprland hyprpaper gnome-keyring waybar alacritty thunar hyprshot rofi-wayland polkit-kde-agent swaylock-effects zsh zed nwg-look-bin"
-FEDORA_APPLIST="hyprland hyprpaper waybar hyprshot swaylock-effects neovim gnome-keyring alacritty thunar rofi-wayland polkit-kde zsh zed nwg-look"
+ARCH_APPLIST="neovim hyprland hyprpaper gnome-keyring waybar alacritty thunar hyprshot rofi-wayland polkit-kde-agent swaylock-effects zsh zed nwg-look-bin librewolf-bin"
+FEDORA_APPLIST="hyprland hyprpaper waybar hyprshot swaylock-effects neovim gnome-keyring alacritty thunar rofi-wayland polkit-kde zsh zed nwg-look librewolf"
 
 if [ "$1" == "--init" ]; then
     for i in $DOTDIRS; do
@@ -23,6 +23,7 @@ else
                 sudo dnf copr enable solopasha/hyprland -y
                 sudo dnf copr enable eddsalkield/swaylock-effects -y
 		sudo dnf copr enable tofik/nwg-shell -y
+		curl -fsSL https://rpm.librewolf.net/librewolf-repo.repo | sudo pkexec tee /etc/yum.repos.d/librewolf.repo >/dev/null
                 sudo dnf install $FEDORA_APPLIST -y
             else
                 echo "This script only supports Arch Linux. If you aren't using Arch, you should install dependencies yourself and run this script with --nocheck parameter."
