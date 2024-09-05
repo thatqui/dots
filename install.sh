@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 DOTDIRS="nvim hypr rofi waybar alacritty zed"
-ARCH_APPLIST="neovim hyprland hyprpaper gnome-keyring waybar alacritty thunar hyprshot rofi-wayland polkit-kde-agent swaylock-effects zsh zed nwg-look-bin librewolf-bin"
-FEDORA_APPLIST="hyprland hyprpaper waybar hyprshot swaylock-effects neovim gnome-keyring alacritty thunar rofi-wayland polkit-kde zsh zed nwg-look librewolf"
+ARCH_APPLIST="wlogout neovim hyprland hyprpaper gnome-keyring waybar alacritty thunar hyprshot rofi-wayland polkit-kde-agent swaylock-effects zsh zed nwg-look-bin librewolf-bin"
+FEDORA_APPLIST="hyprland wlogout hyprpaper waybar hyprshot swaylock-effects neovim gnome-keyring alacritty thunar rofi-wayland polkit-kde zsh zed nwg-look librewolf"
 
 if [ "$1" == "--init" ]; then
     for i in $DOTDIRS; do
